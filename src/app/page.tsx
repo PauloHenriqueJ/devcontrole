@@ -9,7 +9,8 @@ export default function Home() {
       <Image src={HeroImg}
        width={600}
        className="max-w-sm md:max:w-xl" 
-       alt="hero" />
+       alt="hero" 
+       />
     
     
     </main>
