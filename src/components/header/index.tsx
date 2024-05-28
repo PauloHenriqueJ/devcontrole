@@ -30,6 +30,8 @@ export function Header() {
 
         </Link>
 
+        <p>{data?.user.name}</p>
+
         {status === "loading" && (
           <button className="animate-spin">
             <FiLoader size={26} color="#4b5563" />

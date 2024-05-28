@@ -11,7 +11,7 @@ import { ButtonRefresh } from './components/button'
 export default async function Dashboard() {
   const session = await getServerSession(authOptions)
 
-  if (!session || !session.user) {
+  if (!session || !session.user /*|| session.user.id !='seu email ou ID' para somente um email ter acesso a dashboard*/) {
     redirect("/")
   }
 

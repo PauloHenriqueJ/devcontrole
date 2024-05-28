@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { api } from '@/lib/api'
 import { CustomerDataInfo } from "../../page"
+import { useState } from 'react'
 
 const schema = z.object({
   name: z.string().min(1, "O nome do chamado é obrigatório"),
@@ -27,12 +28,16 @@ export function FormTicket({ customer }: FormTicketProps) {
       name: data.name,
       description: data.description,
       customerId: customer.id
+      
     })
+    setEnviando(true);
 
 
     setValue("name", "")
     setValue("description", "")
   }
+
+  const [enviando, setEnviando] = useState(false);
 
 
   return (
@@ -57,9 +62,10 @@ export function FormTicket({ customer }: FormTicketProps) {
 
       <button
         type="submit"
-        className="bg-blue-500 rounded-md w-full h-11 px-2 text-white font-bold"
+        className={`bg-blue-500 my-4 px-2 h-11 rounded text-white font-bold ${enviando ? '' : ''}`}
+        disabled={enviando}
       >
-        Cadastrar
+        {enviando ? 'Enviado' : 'Cadastrar'}
       </button>
 
     </form>
