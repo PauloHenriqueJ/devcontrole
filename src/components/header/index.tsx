@@ -19,8 +19,15 @@ export function Header() {
         <Link href="/">
           <h1 className="font-bold text-2xl pl-1 hover:tracking-widest duration-300">
             
-            <span className="text-blue-500">PH</span> INFORMÁTICA
+            <span className="text-blue-500">pH</span> INFORMÁTICA
           </h1>
+        </Link>
+
+        <Link 
+        className="text-lg"
+        href="/open">
+          Abrir chamado
+
         </Link>
 
         {status === "loading" && (
